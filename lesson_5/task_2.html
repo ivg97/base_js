@@ -1,0 +1,51 @@
+<!--2. Сделать генерацию корзины динамической: верстка корзины не должна -->
+<!--находиться в HTML-структуре. Там должен быть только div, в который будет -->
+<!--вставляться корзина, сгенерированная на базе JS:-->
+<!--2.1. Пустая корзина должна выводить строку «Корзина пуста»;-->
+<!--2.2. Наполненная должна выводить «В корзине: n товаров на сумму m рублей».-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+</head>
+<body>
+<div id="cart">
+
+</div>
+
+<script>
+    const products = [
+        {
+            title: 'milk',
+            price: 400,
+        },
+        {
+            title: 'coffee',
+            price: 390,
+        }
+    ];
+    let getDivCart = document.getElementById('cart');
+    console.log(getDivCart)
+    if (products.length == 0)
+    {
+        let h2Element = document.createElement('h2')
+        h2Element.textContent = 'Корзина пуста'
+        getDivCart.appendChild(h2Element)
+    }
+    else
+    {
+        let pEl = document.createElement('p')
+        let sum = 0
+        products.forEach(item => {
+        sum += item.price
+    })
+        pEl.textContent = `В корзине элементов: ${products.length} - на сумму: ${sum} rub`
+        getDivCart.appendChild(pEl)
+    }
+
+</script>
+</body>
+</html>
