@@ -1,0 +1,29 @@
+<!--4. *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей -->
+<!--пирамиды должно быть 20 рядов, а не 5:-->
+<!--x-->
+<!--xx-->
+<!--xxx-->
+<!--xxxx-->
+<!--xxxxx-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4</title>
+</head>
+<body>
+
+<script>
+
+    for (let i = 0; i < 21; i++) {
+        let res = ''
+        for (let k = i; k > 0; k--) {
+            res = res + 'x'
+        }
+        console.log(res)
+    }
+</script>
+
+</body>
+</html>

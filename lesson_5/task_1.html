@@ -1,0 +1,49 @@
+<!--1. Создать функцию, генерирующую шахматную доску. При этом можно использовать -->
+<!--любые html-теги по своему желанию. Доска должна быть разлинована соответствующим образом, -->
+<!--т.е. чередовать черные и белые ячейки. Строки должны нумероваться числами от 1 до 8, -->
+<!--столбцы – латинскими буквами A, B, C, D, E, F, G, H. (использовать createElement / appendChild)-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div>
+    <table id="desk" color="red">
+
+    </table>
+</div>
+<script>
+
+    let getDesk = document.getElementById('desk');
+<!--    console.log(getDesk)-->
+    for(let row = 0; row < 8; row++){
+        let trEl = document.createElement('tr')
+        getDesk.appendChild(trEl)
+
+        for(let col = 0; col < 8; col++){
+            let tdEl = document.createElement('td')
+            if (row % 2 == 0){
+                if (col % 2 == 0) {
+                    tdEl.style.backgroundColor = 'black'
+                }
+            }
+            else {
+                if (col % 2 != 0) {
+                    tdEl.style.backgroundColor = 'black'
+                }
+            }
+
+
+            getDesk.appendChild(tdEl)
+        }
+    }
+
+</script>
+</body>
+</html>
